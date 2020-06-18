@@ -60,7 +60,7 @@
             width: 30%;
             height: 100vh;
             /*view height是螢幕可是範圍高度的百分比*/
-            background-color: #251323;
+            background-color: rgb(41, 19, 59);
             position: absolute;
             top: 50px;
             left: -100%;
@@ -74,6 +74,12 @@
             color: #e4a9f0;
             padding: 10px 20px;
             border-bottom: 1px solid #e4a9f0;
+            transition: color linear 0.15s;
+            cursor: pointer;
+        }
+        
+        nav:hover nav a {
+            background: #734d7a;
         }
         
         #menu {
@@ -184,7 +190,7 @@
         
         .two .item .pic,
         .two .item .text {
-            width: 50%;
+            width: 100%;
             margin: 0;
         }
         
@@ -200,7 +206,7 @@
         .a {
             margin: 0 0px 10px;
             padding: 20px 10px;
-            background-color: rgb(170, 124, 255);
+            background-color: rgb(76, 33, 156);
         }
         
         .a p {
@@ -248,23 +254,23 @@
 
     <div class="header">
         <h1 class="logo">
-            <a href="#"><img src="https://obs.line-scdn.net/0hzdE_MG1EJUt4Jg7mXLFaHEJwJiRLSjZIHBB0SDtIe38ARDIeTBJrflR0LnhQFWIVEUFqJF8kPnoGF2UZRRNr/w644" width="60" height="40">
+            <a href="#"><img src="https://s.newtalk.tw/album/news/349/5e0c859a2e2e8.jpg" width="60" height="40">
         </h1>
         <label for="menu" class="btn"> 
             <span>選單</span>
         </label>
         <nav>
-            <a href="#1">種類</a>
-            <a href="#2">關於</a>
-            <a href="#3">貓咪催眠音樂</a>
-            <a href="#4">貓貓</a>
+            <a href="#1" onmouseover="this.style.backgroundColor='rgb(76, 33, 156)'" onmouseout="this.style.backgroundColor='rgb(41, 19, 59)'">種類</a>
+            <a href="#2" onmouseover="this.style.backgroundColor='rgb(76, 33, 156)'" onmouseout="this.style.backgroundColor='rgb(41, 19, 59)'">關於</a>
+            <a href="#3" onmouseover="this.style.backgroundColor='rgb(76, 33, 156)'" onmouseout="this.style.backgroundColor='rgb(41, 19, 59)'">貓咪催眠音樂</a>
+            <a href="#4" onmouseover="this.style.backgroundColor='rgb(76, 33, 156)'" onmouseout="this.style.backgroundColor='rgb(41, 19, 59)'">貓貓</a>
         </nav>
     </div>
 
-    <marquee direction="right" height="40" scrollamount="5" behavior="alternate"><img src="https://i2.kknews.cc/SIG=2jc3rni/243900058s51n37s6p8r.jpg" height="30"></marquee>
+    <marquee direction="right" height="40" scrollamount="5" behavior="alternate"><img src="https://images.900.tw/upload_file/16/content/061d52d1-54df-8b84-0ba4-3498ceb348fe.jpg" height="30"></marquee>
 
     <div class="bg">
-        <img src=https://i2.kknews.cc/SIG=v2a4sv/31pr00022o71o8p5p001.jpg>
+        <img src=https://cdn.hk01.com/di/media/images/564720/org/7a5b31ccd89a2360794c1ef6bf54393f.jpg/0ws2YFTJcguqJ5hF1Hp3V8ELwZfAP_rMiLU2UYi1NlE?v=w1600>
     </div>
     <div class="a">
         <p>貓咪真的很可愛很可愛，所以大家貓咪領養起來</p>
