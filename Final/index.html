@@ -76,6 +76,7 @@
             border-bottom: 1px solid #e4a9f0;
             transition: color linear 0.15s;
             cursor: pointer;
+            font-family: 微軟正黑體;
         }
         
         nav:hover nav a {
@@ -112,25 +113,6 @@
             padding: 10px 0;
         }
         
-        .title h2 {
-            text-align: center;
-            font-size: 36px;
-            margin: 0 0px 10px;
-            font-family: 微軟正黑體;
-        }
-        
-        .title {
-            margin: 0 0px 10px;
-            padding: 20px 10px;
-            background-color: rgb(225, 179, 230);
-        }
-        
-        .title p {
-            font-size: 18px;
-            text-align: center;
-            font-family: 微軟正黑體;
-        }
-        
         .item {
             margin: 0 10px 20px;
         }
@@ -139,10 +121,12 @@
             font-size: 24px;
             text-align: left;
             font-family: Microsoft JhengHei;
+            color: rgb(37, 14, 37);
         }
         
         .item .text p {
             font-family: Microsoft JhengHei;
+            color: rgb(255, 255, 255);
         }
         
         .item .pic img {
@@ -205,15 +189,18 @@
             width: 50%;
             height: 100%;
             margin: 0;
-        }
-        
-        .two .item .text {
             display: flex;
             padding: 0 10px;
             box-sizing: border-box;
             flex-direction: column;
             justify-content: center;
             text-align: left;
+        }
+        
+        .two .item .text p {
+            color: black;
+            text-align: justify;
+            text-justify: inter-ideograph;
         }
         
         .a {
@@ -256,8 +243,8 @@
         }
         
         .one .item .pic {
-            width: 50%;
-            height: 30%;
+            width: 100%;
+            height: 100%;
             margin: 0;
         }
         
@@ -265,9 +252,6 @@
             width: 50%;
             height: 100%;
             margin: 0;
-        }
-        
-        .one .item .text {
             display: flex;
             padding: 0 10px;
             box-sizing: border-box;
@@ -275,6 +259,15 @@
             justify-content: center;
             text-align: left;
             color: #aaa;
+        }
+        
+        .one .item .text h3 {
+            color: rgb(133, 127, 127);
+        }
+        
+        .p {
+            background-color: rgb(58, 7, 32);
+            color: rgb(223, 207, 238);
         }
         
         .p h3 {
@@ -289,14 +282,52 @@
             font-family: 微軟正黑體;
         }
         
-        .p {
-            background-color: rgb(191, 191, 235);
-            color: rgb(35, 5, 63);
+        body {
+            background-size: cover;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .three {
+            margin: 60px 0;
+            background-color: #bcccd6;
+        }
+        
+        .three .item {
+            display: flex;
+            margin: 0;
+        }
+        
+        .three .item .pic {
+            width: 50%;
+            height: 30%;
+            margin: 0;
+        }
+        
+        .three .item .text {
+            width: 50%;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            padding: 0 10px;
+            box-sizing: border-box;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: rgb(51, 12, 39);
+            font-family: 微軟正黑體;
+            font-size: large;
+        }
+        
+        .three .item .text p {
+            color: rgb(51, 12, 39);
+            text-align: justify;
+            text-justify: inter-ideograph;
         }
     </style>
 </head>
 
-<body>
+<body background="https://images.pexels.com/photos/3576112/pexels-photo-3576112.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260">
     <input type="checkbox" name="" id="menu">
 
     <div class="header">
@@ -307,10 +338,10 @@
             <span>選單</span>
         </label>
         <nav>
-            <a href="#1" onmouseover="this.style.backgroundColor='rgb(76, 33, 156)'" onmouseout="this.style.backgroundColor='rgb(41, 19, 59)'">種類</a>
-            <a href="#2" onmouseover="this.style.backgroundColor='rgb(76, 33, 156)'" onmouseout="this.style.backgroundColor='rgb(41, 19, 59)'">關於</a>
-            <a href="#3" onmouseover="this.style.backgroundColor='rgb(76, 33, 156)'" onmouseout="this.style.backgroundColor='rgb(41, 19, 59)'">貓咪催眠音樂</a>
-            <a href="#4" onmouseover="this.style.backgroundColor='rgb(76, 33, 156)'" onmouseout="this.style.backgroundColor='rgb(41, 19, 59)'">貓貓</a>
+            <a href="#1" onmouseover="this.style.backgroundColor='rgb(76, 33, 156)'" onmouseout="this.style.backgroundColor='rgb(41, 19, 59)'">關於</a>
+            <a href="#2" onmouseover="this.style.backgroundColor='rgb(76, 33, 156)'" onmouseout="this.style.backgroundColor='rgb(41, 19, 59)'">種類</a>
+            <a href="#3" onmouseover="this.style.backgroundColor='rgb(76, 33, 156)'" onmouseout="this.style.backgroundColor='rgb(41, 19, 59)'">冷知識</a>
+            <a href="#4" onmouseover="this.style.backgroundColor='rgb(76, 33, 156)'" onmouseout="this.style.backgroundColor='rgb(41, 19, 59)'">催眠音樂</a>
         </nav>
     </div>
 
@@ -339,14 +370,25 @@
         </div>
     </div>
 
-
-    <a name="2">
-        <div class="title ">
-            <h2>關於貓咪</h2>
-            <p>&emsp;&emsp;為小型貓科動物。根據遺傳學及考古學分析，人類養貓的紀錄可追溯至10,000年前的新月沃土地區，古埃及人飼養貓的紀錄可追溯至3,600年前，目的可能為捕鼠及其他齧齒目動物，以防止牠們吃掉榖物。現在，貓成為世界上最為廣泛的寵物之一，飼養率僅次於犬（或稱狗），但同時也是危害十分廣泛的外來種，由於獵捕的習慣，威脅著很多原生鳥類、齧齒類的生存，是世界百大外來入侵種之一。更直接的風險是因狩獵而感染野外病菌的貓，會引入例如狂犬病等進入人類生活圈，因此對飼主知識技術與社會責任要求也較高，先進國家的公衛系統普遍會針對野貓進行抓捕絕育，管理意義即在於此。長期飼育的貓平均壽命為12年以上，歷史上最長壽的貓則達38歲。小部分地方文化在過去亦有食用貓肉的習俗，如越南、廣東，瑞士等地，但現今大部分地區因衛生防疫，或是以貓為寵物等因素而禁止食用貓肉品種獲認證的貓會稱為純種貓，人類以選擇繁殖的方式讓貓繁殖出人類認為趨於「完美」的品種。歷史上也存在因為偶然突變而產生，後給人類保留並加強其特色的品種。</p>
+    <a name="1">
+        <div class="three ">
+            <div class="item-group ">
+                <div class="item ">
+                    <div class="text ">
+                        <h2>關於貓咪</h2>
+                        <p>&emsp;&emsp;為小型貓科動物。根據遺傳學及考古學分析，人類養貓的紀錄可追溯至10,000年前的新月沃土地區，古埃及人飼養貓的紀錄可追溯至3,600年前，目的可能為捕鼠及其他齧齒目動物，以防止牠們吃掉榖物。現在，貓成為世界上最為廣泛的寵物之一，飼養率僅次於犬，但同時也是危害十分廣泛的外來種，由於獵捕的習慣，威脅著很多原生鳥類、齧齒類的生存，是世界百大外來入侵種之一。</p>
+                    </div>
+                    <div class="pic ">
+                        <img src="https://lh3.googleusercontent.com/proxy/00OitS507_hFRlleB6-_s_i7bKz3ePo7IqXaIA4Z86XxYIuYHsChmE9JqbSGub1FXF1dSl3VwgmZ94h8ld6bFsfXvc9BdMoxIzojLnR7FzO0kVDyfwvj3y835cWjLAgwx0rpJ0KgGl-iRnQj">
+                    </div>
+                </div>
+            </div>
         </div>
     </a>
-    <a name="1">
+
+
+
+    <a name="2">
         <div class="item-group ">
             <div class="item ">
                 <div class="pic ">
@@ -391,7 +433,7 @@
     </a>
 
 
-    <a name="4">
+    <a name="3">
         <div class="one ">
             <div class="item-group ">
                 <div class="item ">
@@ -411,7 +453,7 @@
     </a>
 
 
-    <a name="3">
+    <a name="4">
         <div class=video-container>
             <iframe width="900" height="506" src="https://www.youtube.com/embed/DyjuJG-PW8M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -419,6 +461,7 @@
             <h3>奶貓音樂</h3>
             <p>
                 &emsp;&emsp;喵星人對我們人類的音樂其實並不太感興趣。尤其是人類愛的「重拍和心跳速度一樣的董茲董茲」（還記得江南Style就是利用這個原理嗎？），喵星人聽了可以說是毫無反應。
+                <br><img src="https://www.twgreatdaily.com/imgs/image/166/16604541.jpg" width="60" height="60" position="absolute" right="0px">
                 <br><br>&emsp;&emsp;2015年，美國威斯康辛大學麥尼遜分校，以及馬里蘭大學的科學家共同發表研究，為了驗證貓咪對不同的音樂會有怎樣的反應，在超大量的各種音樂中，最後就研究出了會讓貓咪心情最好的音樂。他們表示，喵星人偏愛的音樂，原理其實和我們人類類似。比起心跳，貓咪更喜歡像是牠們天生呼嚕嚕時會發出的，偏低頻的聲音。如果可以複製出呼嚕呼嚕的節奏，或是貓咪小時候喝奶動作的節奏......這對貓咪來說，就會特別有吸引力。研究團隊就嘗試放過許多人類的音樂（例如莫札特的交響樂），但房間中的47隻貓咪都毫無反應。當播放的內容換成「貓咪音樂」時，絕大部分的貓都把耳朵豎起來，表現出有興趣的樣子。更有不少貓咪直接聚集到喇叭前面，想要聽到更多音樂。
                 <br><br>&emsp;&emsp;雖然貓咪音樂終究不會讓皇上「瞬間開心」（又不是毒品！），但是的確會讓牠們的心情穩定、悠閒，也更好。有人說，未來動物醫院或收容所都可以播放這樣的音樂，或許也可以安定在這些環境中緊張的貓咪。這樣聽起來，也讓人覺得真的很不錯呢！
             </p>
