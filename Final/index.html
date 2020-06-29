@@ -5,7 +5,352 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>貓貓</title>
-
+    <style type="text/css">
+        * {
+            /*消除網頁邊框*/
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .header {
+            height: 50px;
+            background-color: rgb(41, 19, 59);
+            position: relative;
+        }
+        
+        .btn {
+            width: 40px;
+            height: 40px;
+            background-color: rgb(41, 19, 59);
+            display: block;
+            /*規定元入以區塊方式呈現*/
+            position: absolute;
+            /*相對於他的父元素進行絕對定位*/
+            top: 5px;
+            right: 10px;
+        }
+        
+        .btn span {
+            opacity: 0;
+            /*區塊內透明*/
+            width: 1px;
+            height: 1px;
+            display: block;
+            overflow: hidden;
+            /*自動隱藏超出的文字或圖片*/
+        }
+        
+        .btn::before {
+            /*在原本的元素「之前」加入內容*/
+            content: '';
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            background-color: #aaa;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 8px 0px #aaaaaa, 0px -8px 0px #aaa;
+            /*影子*/
+        }
+        
+        nav {
+            width: 30%;
+            height: 100vh;
+            /*view height是螢幕可是範圍高度的百分比*/
+            background-color: rgb(41, 19, 59);
+            position: absolute;
+            top: 50px;
+            left: -100%;
+        }
+        
+        nav a {
+            /*設置裡面的超連結*/
+            display: block;
+            /*link變直排*/
+            text-decoration: none;
+            color: #e4a9f0;
+            padding: 10px 20px;
+            border-bottom: 1px solid #a9bff0;
+            transition: color linear 0.15s;
+            cursor: pointer;
+            font-family: 微軟正黑體;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+            color: rgb(113, 209, 238);
+        }
+        
+        #menu {
+            position: absolute;
+            /*讓最上方的checkbox隱藏*/
+        }
+        
+        #menu:checked~.header nav {
+            left: 0;
+        }
+        
+        img {
+            vertical-align: bottom;
+        }
+        
+        .item-group {
+            width: 100%;
+            max-width: 1400px;
+            margin: auto;
+        }
+        
+        .bg img {
+            width: 100%;
+        }
+        
+        .footer {
+            background-color: rgb(52, 9, 58);
+            color: #aaa;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        .item {
+            margin: 0 10px 20px;
+        }
+        
+        .item .text h3 {
+            font-size: 24px;
+            text-align: left;
+            font-family: Microsoft JhengHei;
+            color: rgb(37, 14, 37);
+        }
+        
+        .item .text p {
+            font-family: Microsoft JhengHei;
+            color: rgb(255, 255, 255);
+        }
+        
+        .item .pic img {
+            /*設置全圖片*/
+            width: 100%;
+        }
+        
+        .item .b {
+            /*設置全圖片*/
+            width: 30%;
+        }
+        
+        .two {
+            margin: 60px 0;
+            background-color: rgb(97, 56, 89);
+        }
+        
+        @media screen and (min-width:768px) {
+            /*設定桌電及平板顯示*/
+            .item-group {
+                display: flex;
+                /*彈性盒子  又稱flexbox*/
+            }
+            .btn {
+                display: none;
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                /*分散對齊*/
+                align-items: center;
+            }
+            nav {
+                position: relative;
+                left: 0;
+                display: flex;
+                width: auto;
+                height: auto;
+                top: 0;
+                background-color: transparent;
+                /*透明顏色*/
+            }
+            nav a {
+                border-bottom: none;
+            }
+        }
+        
+        .two .item {
+            display: flex;
+            margin: 0;
+        }
+        
+        .two .item .pic {
+            width: 50%;
+            height: 30%;
+            margin: 0;
+        }
+        
+        .two .item .text {
+            width: 50%;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            padding: 0 10px;
+            box-sizing: border-box;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+        
+        .two .item .text h3 {
+            color: rgb(199, 183, 183);
+        }
+        
+        .two .item .text p {
+            color: rgb(199, 183, 183);
+            text-align: justify;
+            text-justify: inter-ideograph;
+        }
+        
+        .a {
+            margin: 0 0px 10px;
+            padding: 20px 10px;
+            background-color: rgb(76, 33, 156);
+        }
+        
+        .a p {
+            font-size: 18px;
+            text-align: center;
+            color: cornsilk;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe,
+        .video-container object,
+        .video-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .one {
+            margin: 60px 0;
+            background-color: rgb(64, 47, 70);
+        }
+        
+        .one .item {
+            display: flex;
+            margin: 0;
+        }
+        
+        .one .item .pic {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        
+        .one .item .text {
+            width: 50%;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            padding: 0 10px;
+            box-sizing: border-box;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            color: #aaa;
+        }
+        
+        .one .item .text h3 {
+            color: rgb(228, 222, 222);
+        }
+        
+        .p {
+            background-color: rgb(58, 7, 32);
+            color: rgb(223, 207, 238);
+        }
+        
+        .p h3 {
+            font-size: 24px;
+            text-align: left;
+            margin: 20px 0px 10px;
+            font-family: 微軟正黑體;
+        }
+        
+        .p p {
+            margin: 0px 0px 20px;
+            font-family: 微軟正黑體;
+        }
+        
+        body {
+            background-size: cover;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .three {
+            margin: 60px 0;
+            background-color: #bcccd6;
+        }
+        
+        .three .item {
+            display: flex;
+            margin: 0;
+        }
+        
+        .three .item .pic {
+            width: 50%;
+            height: 30%;
+            margin: 0;
+        }
+        
+        .three .item .text {
+            width: 50%;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            padding: 0 10px;
+            box-sizing: border-box;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: rgb(51, 12, 39);
+            font-family: 微軟正黑體;
+            font-size: large;
+        }
+        
+        .three .item .text p {
+            color: rgb(51, 12, 39);
+            text-align: justify;
+            text-justify: inter-ideograph;
+        }
+        
+        .q {
+            background-color: rgb(219, 56, 35);
+            color: rgb(28, 13, 43);
+        }
+        
+        .q h3 {
+            font-size: 24px;
+            text-align: center;
+            margin: 20px 0px 10px;
+            font-family: 微軟正黑體;
+            font-size: xx-large;
+        }
+        
+        .q p {
+            text-align: center;
+            margin: 0px 0px 20px;
+            font-family: 微軟正黑體;
+            font-size: larger;
+        }
+    </style>
 </head>
 
 <body background="https://images.pexels.com/photos/3576112/pexels-photo-3576112.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260">
@@ -40,7 +385,7 @@
         <div class="item-group ">
             <div class="item ">
                 <div class="pic ">
-                    <img src=https://lh3.googleusercontent.com/proxy/cqyP9SEvIN19Bn4wz4pBhDTLbKg_Qimy7C6I0LboENcjUJLf7vAGeuWYWgWH27sGmjNnL3sFwKOS0e-pwNVc636cUgbj9mhzU8hZFz6kDUEAuxCV9NuKFg>
+                    <img src=貓貓.gif>
                 </div>
                 <div class="text ">
                     <h3>CAT</h3>
@@ -61,7 +406,7 @@
                         <p>&emsp;&emsp;為小型貓科動物。根據遺傳學及考古學分析，人類養貓的紀錄可追溯至10,000年前的新月沃土地區，古埃及人飼養貓的紀錄可追溯至3,600年前，目的可能為捕鼠及其他齧齒目動物，以防止牠們吃掉榖物。現在，貓成為世界上最為廣泛的寵物之一，飼養率僅次於犬，但同時也是危害十分廣泛的外來種，由於獵捕的習慣，威脅著很多原生鳥類、齧齒類的生存，是世界百大外來入侵種之一。</p>
                     </div>
                     <div class="pic ">
-                        <img src="https://lh3.googleusercontent.com/proxy/00OitS507_hFRlleB6-_s_i7bKz3ePo7IqXaIA4Z86XxYIuYHsChmE9JqbSGub1FXF1dSl3VwgmZ94h8ld6bFsfXvc9BdMoxIzojLnR7FzO0kVDyfwvj3y835cWjLAgwx0rpJ0KgGl-iRnQj">
+                        <img src=貓貓2.gif>
                     </div>
                 </div>
             </div>
@@ -166,10 +511,10 @@
             <div class="item ">
                 <div class="pic">
                     <div class="video-container">
-                        <iframe width="900" height="506" src="https://www.youtube.com/embed/dSAqMOZNilk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width=" 900 " height="506 " src="https://www.youtube.com/embed/dSAqMOZNilk " frameborder="0 " allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture " allowfullscreen></iframe>
                     </div>
                 </div>
-                <div class="text">
+                <div class="text ">
                     <h3>車禍骨折</h3>
                     <p>&emsp;&emsp;流浪貓的壽命非常的短，平均大概也就存活三年左右的時間而已。流浪貓死亡的情況大多數是出車禍、病死、餓死等，其中又以出車禍最為常見，也是死亡機率最高的原因之一！
                     </p>
@@ -194,6 +539,23 @@
             </div>
         </div>
     </div>
+
+    <a name="6">
+        <div class="one ">
+            <div class="item-group ">
+                <div class="item ">
+                    <div class="pic">
+                        <img src="89618.jpg">
+                    </div>
+                    <div class="text">
+                        <h3>錢錢</h3>
+                        <p>&emsp;&emsp;最後來跟大家介紹一下！這是我家的貓咪，牠叫錢錢～是不是很可愛呢呵呵呵呵呵呵
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
 
     <div class="footer ">
         &copy; 貓咪好可愛啾啾
